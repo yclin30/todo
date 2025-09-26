@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <h1><i class="fa-solid fa-check-circle"></i>
+        待办事项</h1>
+      <!-- FIX: 添加了 id="date" -->
+      <p id="date">日期</p>
+    </header>
+    <div class="todo-input">
+      <input type="text" id="todo-input" placeholder="添加新的待办事项...">
+      <!-- FIX: 将 id 修改为 "add-task" -->
+      <button id="add-task"><i class="fa-solid fa-plus"></i></button>
+    </div>
+
+    <div class="filters">
+      <span class="filter active" data-filter="all">全部</span>
+      <span class="filter" data-filter="active">未完成</span>
+      <span class="filter" data-filter="completed">已完成</span>
+    </div>
+    <div class="todos-container">
+      <!-- FIX: 修正了 id 中的空格，并移除了 hidden 类 -->
+      <ul id="todos-list">
+        <!-- 待办事项将由 JavaScript 动态添加到这里 -->
+      </ul>
+      <div class="empty-state message">
+        <i class="fa-solid fa-clipboard-list"></i>
+        <p>没有待办事项</p>
+      </div>
+    </div>
+    <footer>
+      <!-- FIX: 将 id 修改为 "items-left" -->
+      <span id="items-left">0 task</span>
+      <button id="clear-completed">清除已完成</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
